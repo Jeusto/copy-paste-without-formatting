@@ -1,12 +1,12 @@
 {
   "manifest_version": 3,
-  "name": "<name in manifest.json>",
+  "name": "Copy paste without formatting",
   "description": "<description in manifest.json>",
   "options_ui": {
     "page": "src/pages/options/index.html"
   },
   "background": {
-    "service_worker": "src/pages/background/index.ts",
+    "service_worker": "src/pages/background/background.ts",
     "type": "module"
   },
   "action": {
@@ -32,14 +32,13 @@
         "<all_urls>"
       ],
       "js": [
-        "src/pages/content/index.tsx"
+        "src/pages/content/content.tsx"
       ],
       "css": [
         "contentStyle.css"
       ]
     }
   ],
-  "devtools_page": "src/pages/devtools/index.html",
   "web_accessible_resources": [
     {
       "resources": [

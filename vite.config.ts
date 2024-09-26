@@ -28,13 +28,16 @@ export default defineConfig(({ mode }) => {
         manifest: defineManifest({
           manifest_version: 3,
           version: pkg.version,
-          name: mode === "development" ? `DEV: myname` : "myname",
-          description: "description",
+          name:
+            mode === "development"
+              ? `[Dev] Copy paste without formatting`
+              : "Copy paste without formatting",
+          description: "",
           options_ui: {
             page: "src/pages/options/index.html",
           },
           background: {
-            service_worker: "src/pages/background/index.ts",
+            service_worker: "src/pages/background/background.ts",
             type: "module",
           },
           action: {
@@ -43,9 +46,6 @@ export default defineConfig(({ mode }) => {
               "32": "icon-32.png",
             },
           },
-          chrome_url_overrides: {
-            newtab: "src/pages/newtab/index.html",
-          },
           icons: {
             "128": "icon-128.png",
           },
@@ -53,11 +53,10 @@ export default defineConfig(({ mode }) => {
           content_scripts: [
             {
               matches: ["http://*/*", "https://*/*", "<all_urls>"],
-              js: ["src/pages/content/index.tsx"],
+              js: ["src/pages/content/content.tsx"],
               css: ["contentStyle.css"],
             },
           ],
-          devtools_page: "src/pages/devtools/index.html",
         }),
         contentScripts: {
           injectCss: true,
