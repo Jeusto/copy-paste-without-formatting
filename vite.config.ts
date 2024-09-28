@@ -49,10 +49,31 @@ export default defineConfig(({ mode }) => {
           icons: {
             "128": "icon-128.png",
           },
-          permissions: ["activeTab"],
+          permissions: [
+            "activeTab",
+            "contextMenus",
+            "clipboardRead",
+            "clipboardWrite",
+            "scripting",
+          ],
+          host_permissions: [
+            "http://*/*",
+            "https://*/*",
+            "file:///*",
+            "ftp://*/*",
+          ],
+          commands: {
+            copy_without_formatting: {
+              suggested_key: {
+                default: "Ctrl+Shift+Y",
+                mac: "Command+Shift+Y",
+              },
+              description: "Copy selected text without formatting",
+            },
+          },
           content_scripts: [
             {
-              matches: ["http://*/*", "https://*/*", "<all_urls>"],
+              matches: ["<all_urls>"],
               js: ["src/pages/content/content.tsx"],
               css: ["contentStyle.css"],
             },

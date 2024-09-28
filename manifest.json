@@ -22,7 +22,11 @@
     "128": "icon-128.png"
   },
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "contextMenus",
+    "clipboardRead",
+    "clipboardWrite",
+    "scripting"
   ],
   "content_scripts": [
     {
