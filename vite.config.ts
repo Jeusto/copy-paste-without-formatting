@@ -70,6 +70,13 @@ export default defineConfig(({ mode }) => {
               },
               description: "Copy selected text without formatting",
             },
+            paste_without_formatting: {
+              suggested_key: {
+                default: "Ctrl+Shift+U",
+                mac: "Command+Shift+U",
+              },
+              description: "Paste text without formatting",
+            },
           },
         }),
       }),
