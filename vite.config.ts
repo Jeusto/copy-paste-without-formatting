@@ -71,17 +71,7 @@ export default defineConfig(({ mode }) => {
               description: "Copy selected text without formatting",
             },
           },
-          content_scripts: [
-            {
-              matches: ["<all_urls>"],
-              js: ["src/pages/content/content.tsx"],
-              css: ["contentStyle.css"],
-            },
-          ],
         }),
-        contentScripts: {
-          injectCss: true,
-        },
       }),
     ],
   };
