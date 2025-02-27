@@ -3,7 +3,7 @@ import Browser from "webextension-polyfill";
 console.log("Background script loaded");
 
 const CONTEXT_MENU_ITEMS = [
-  // { id: "copy_without_formatting", title: "Copy without formatting" },
+  { id: "copy_without_formatting", title: "Copy without formatting" },
   { id: "paste_without_formatting", title: "Paste without formatting" },
 ];
 

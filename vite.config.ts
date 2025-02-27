@@ -30,9 +30,10 @@ export default defineConfig(({ mode }) => {
           version: pkg.version,
           name:
             mode === "development"
-              ? `[Dev] Copy paste without formatting`
-              : "Copy paste without formatting",
-          description: "",
+              ? `[Dev] Copy and paste text without formatting`
+              : "Copy and paste text without formatting",
+          description:
+            "Easily copy and paste text without formatting using keyboard shortcuts or the context menu",
           options_ui: {
             page: "src/pages/options/index.html",
           },
